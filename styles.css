@@ -1,0 +1,415 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flex-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.hide-element {
+  opacity: 0;
+}
+
+.show-element {
+  opacity: 1;
+  z-index: 4;
+}
+
+.show-element .social-icon {
+  cursor: pointer;
+  -webkit-transition: -webkit-filter 0.15s ease-out;
+  transition: -webkit-filter 0.15s ease-out;
+  transition: filter 0.15s ease-out;
+  transition: filter 0.15s ease-out, -webkit-filter 0.15s ease-out;
+}
+
+.show-element .social-icon:hover {
+  -webkit-filter: invert(67%) sepia(22%) saturate(300%) hue-rotate(172deg) brightness(200%) contrast(93%);
+          filter: invert(67%) sepia(22%) saturate(300%) hue-rotate(172deg) brightness(200%) contrast(93%);
+}
+
+/***** some base definitions from https://piccalil.li/blog/a-modern-css-reset/ *****/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/***** main styles *****/
+html, body {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  color: #48556a;
+  background-color: #ecf2f8;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.article-container {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  border-radius: 15px;
+}
+
+@media screen and (min-width: 900px) {
+  .article-container {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 10vh;
+    bottom: 0;
+    margin: 150px 300px 150px 300px;
+    height: 40vh;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .article-container {
+    margin: 150px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .article-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 100px 30px 100px 30px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .article-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 10px 30px 10px 30px;
+  }
+}
+
+.drawers {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  height: 100%;
+  width: 100%;
+  background-image: url(./images/drawers.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 15px 0 0 15px;
+  -webkit-transition: opacity 0.3 ease-out;
+  transition: opacity 0.3 ease-out;
+}
+
+.drawers:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 900px) {
+  .drawers {
+    border-radius: 15px 15px 0 0;
+  }
+}
+
+.info-container {
+  height: 75%;
+  width: 100%;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  padding: 0px 50px 0px 50px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.info-container .title {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 900px) {
+  .info-container .title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 0 30px 0 30px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .info-container .title {
+    font-size: 16px;
+  }
+}
+
+.info-container .article-text {
+  color: #6d7f97;
+  line-height: 20px;
+}
+
+@media screen and (max-width: 900px) {
+  .info-container .article-text {
+    font-size: 15px;
+    line-height: 25px;
+    margin-bottom: 30px;
+    padding: 0 30px 0 30px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .info-container .article-text {
+    line-height: 20px;
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .info-container {
+    padding: 30px 0px 0px 0px;
+  }
+}
+
+.author-container {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.author-container .avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.author-container .name-date-container {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-left: 15px;
+}
+
+.author-container .name-date-container .author-name {
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.author-container .name-date-container .published-date {
+  color: #9eafc2;
+}
+
+@media screen and (max-width: 900px) {
+  .author-container {
+    padding: 0 50px 20px 50px;
+  }
+}
+
+.share-container {
+  position: relative;
+}
+
+.share-container .desktop-share {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 34px;
+  width: 230px;
+  height: 50px;
+  bottom: 60px;
+  right: -90px;
+  background-color: #48556a;
+  border-radius: 10px;
+  color: white;
+}
+
+.share-container .desktop-share .desktop-share-info {
+  width: 100%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  gap: 15px;
+  z-index: 1;
+}
+
+.share-container .desktop-share .desktop-share-info p {
+  color: #9eafc2;
+  letter-spacing: 5px;
+  font-size: 11px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.share-container .arrow-icon {
+  position: relative;
+  right: 44%;
+  top: 60%;
+  width: 50px;
+  height: 50px;
+  color: #48556a;
+}
+
+.share-container .icon {
+  background-image: url(./images/icon-share.svg);
+  background-repeat: no-repeat;
+  background-position: 55% 48%;
+  margin-top: 40%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  min-height: 30px;
+  min-width: 30px;
+  border-radius: 50%;
+  background-color: #ecf2f8;
+  cursor: pointer;
+  z-index: 3;
+  -webkit-transition: background-color 0.15s ease-out;
+  transition: background-color 0.15s ease-out;
+}
+
+.share-container .icon:hover {
+  background-color: #9eafc2;
+}
+
+.mobile-share {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px 0px 15px 15px;
+  background-color: #48556a;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mobile-share .mobile-share-info {
+  gap: 20px;
+}
+
+.mobile-share p {
+  color: #9eafc2;
+  letter-spacing: 5px;
+  font-size: 11px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.mobile-share .social-icon {
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 320px) {
+  .mobile-share .social-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-share {
+    height: 120px;
+  }
+}
+
+@media screen and (min-width: 376px) {
+  .mobile-share {
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 514px) {
+  .mobile-share {
+    height: 100px;
+  }
+}
+
+#share-btn-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #6d7f97;
+  border-radius: 50%;
+  min-height: 30px;
+  min-width: 30px;
+  cursor: pointer;
+}
+
+#share-btn-mobile .share-btn-mob {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-left: 8px;
+  -webkit-filter: invert(93%) sepia(93%) saturate(0%) hue-rotate(216deg) brightness(200%) contrast(109%);
+          filter: invert(93%) sepia(93%) saturate(0%) hue-rotate(216deg) brightness(200%) contrast(109%);
+}
+
+.attribution {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+/*# sourceMappingURL=styles.css.map */
